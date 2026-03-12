@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="navbar glass-panel">
+    <header className="navbar">
       <div className="container nav-container">
         <Link to="/" className="brand">
           <div className="brand-icon">
@@ -40,20 +40,21 @@ const Navbar = () => {
       <style>{`
         .navbar {
           position: fixed;
-          top: 16px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: calc(100% - 32px);
-          max-width: var(--max-width);
+          top: 0;
+          left: 0;
+          width: 100%;
           z-index: 1000;
-          padding: 12px 24px;
+          padding: 16px 0;
+          background: var(--glass-bg);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border-bottom: 1px solid var(--glass-border);
         }
 
         .nav-container {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 0;
         }
 
         .brand {

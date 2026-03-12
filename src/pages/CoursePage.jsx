@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { specificCourseContent, allCoursesFlat } from '../data/courses';
-import { Lock, Settings, Shuffle, ArrowRight, Zap, Target } from 'lucide-react';
+import { Lock, Settings, Shuffle, ArrowRight, Zap, Target, Star } from 'lucide-react';
 
 const CoursePage = () => {
   const { id } = useParams();
@@ -27,7 +27,14 @@ const CoursePage = () => {
           <ArrowRight size={16} style={{ transform: 'rotate(180deg)' }} />
           <span>Wróć do biblioteki</span>
         </Link>
-        <div className="badge-small mb-6">Moduł LifeOS</div>
+        <div className="course-badges mb-6 flex items-center gap-4">
+          <div className="badge-small">Moduł LifeOS</div>
+          {course.type === 'premium' && (
+            <div className="badge-premium flex items-center gap-2">
+              <Star size={14} fill="currentColor" /> Kurs Premium
+            </div>
+          )}
+        </div>
         <h1 className="course-title-main">{course.title}</h1>
       </header>
 
@@ -204,6 +211,19 @@ const CoursePage = () => {
           padding: 6px 12px;
           border-radius: 4px;
           background: rgba(59, 130, 246, 0.1);
+        }
+
+        .badge-premium {
+          display: inline-flex;
+          font-size: 0.75rem;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          font-weight: 700;
+          color: #eab308;
+          padding: 6px 12px;
+          border-radius: 4px;
+          background: rgba(234, 179, 8, 0.15);
+          border: 1px solid rgba(234, 179, 8, 0.3);
         }
 
         .icon-wrap {

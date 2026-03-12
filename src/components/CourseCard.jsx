@@ -7,8 +7,8 @@ const CourseCard = ({ course }) => {
   return (
     <Link to={`/course/${course.id}`} className={`course-card glass-panel ${isPremium ? 'premium-card' : ''}`}>
       {isPremium && (
-        <div className="premium-badge">
-          <Star size={14} className="star-icon" fill="currentColor" /> Premium
+        <div className="premium-badge" title="Kurs Premium">
+          <Star size={18} className="star-icon" fill="currentColor" />
         </div>
       )}
       <div className="card-top">
@@ -126,16 +126,18 @@ const CourseCard = ({ course }) => {
           right: 16px;
           background: rgba(234, 179, 8, 0.15);
           color: #eab308;
-          font-size: 0.75rem;
-          font-weight: 700;
-          padding: 4px 10px;
-          border-radius: 100px;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
           display: flex;
           align-items: center;
-          gap: 4px;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
+          justify-content: center;
           border: 1px solid rgba(234, 179, 8, 0.3);
+          transition: transform var(--transition-normal);
+        }
+        
+        .premium-card:hover .premium-badge {
+          transform: scale(1.1);
         }
       `}</style>
     </Link>
