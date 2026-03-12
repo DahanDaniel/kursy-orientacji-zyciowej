@@ -28,7 +28,10 @@ const Navbar = () => {
             <div className="brand-icon">
               <Compass size={24} color="var(--accent-primary)" />
             </div>
-            <span className="brand-text">Kursy Orientacji Życiowej</span>
+            <span className="brand-text" style={{ display: 'flex', alignItems: 'center' }}>
+              Kursy Orientacji Życiowej
+              <span style={{ fontSize: '0.65rem', marginLeft: '12px', opacity: 0.6, fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase', border: '1px solid var(--glass-border)', padding: '4px 8px', borderRadius: '4px' }}>by Daniel Dahan</span>
+            </span>
           </Link>
         )}
         <nav className="nav-links">
