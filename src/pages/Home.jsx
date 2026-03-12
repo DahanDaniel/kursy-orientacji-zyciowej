@@ -158,10 +158,10 @@ const Home = () => {
           
           <div className="bundle-card glass-panel">
             <h3>Full Library</h3>
-            <div className="bundle-price">2000 zł</div>
-            <p className="bundle-desc">Pełny dostęp do 20+ modułów.</p>
+            <div className="bundle-price">2300 zł</div>
+            <p className="bundle-desc">Pełny dostęp do 25 modułów, w tym premium.</p>
             <ul className="bundle-features">
-              <li>Wszystkie 20+ kursów</li>
+              <li>Wszystkie 25 kursów</li>
               <li>Architektura całego LifeOS</li>
               <li>Własna ścieżka integracji</li>
             </ul>

@@ -8,6 +8,7 @@ export const courseCategories = [
         problem: "Umysł nie przestaje produkować myśli, pojawia się napięcie i zmęczenie",
         model: "DMN vs tryb zadaniowy",
         price: 200,
+        type: "standard"
       },
       {
         id: "sen",
@@ -15,6 +16,7 @@ export const courseCategories = [
         problem: "Trudności z zasypianiem lub niewystarczająca regeneracja",
         model: "Rytmy biologiczne",
         price: 200,
+        type: "standard"
       },
       {
         id: "sport",
@@ -22,13 +24,15 @@ export const courseCategories = [
         problem: "Brak energii, napięcie psychiczne",
         model: "Ruch reguluje układ nerwowy",
         price: 200,
+        type: "standard"
       },
       {
         id: "uwaga",
         title: "Zarządzanie uwagą",
         problem: "Trudność w skupieniu",
         model: "Uwaga jako ograniczony zasób",
-        price: 200,
+        price: 350,
+        type: "premium"
       }
     ]
   },
@@ -41,6 +45,7 @@ export const courseCategories = [
         problem: "Chaos informacyjny",
         model: "External brain",
         price: 200,
+        type: "standard"
       },
       {
         id: "projekty",
@@ -48,6 +53,7 @@ export const courseCategories = [
         problem: "Wiele pomysłów bez realizacji",
         model: "Projekty vs zadania",
         price: 200,
+        type: "standard"
       },
       {
         id: "decyzje",
@@ -55,13 +61,15 @@ export const courseCategories = [
         problem: "Trudność w podejmowaniu decyzji",
         model: "Decyzje jako eksperyment",
         price: 200,
+        type: "standard"
       },
       {
         id: "planowanie",
         title: "Planowanie realistyczne",
         problem: "Plany się rozpadają",
         model: "Planowanie adaptacyjne",
-        price: 200,
+        price: 400,
+        type: "premium"
       }
     ]
   },
@@ -74,6 +82,7 @@ export const courseCategories = [
         problem: "Konflikty w rozmowach",
         model: "Obserwacja vs interpretacja",
         price: 200,
+        type: "standard"
       },
       {
         id: "granice",
@@ -81,6 +90,7 @@ export const courseCategories = [
         problem: "Ludzie przekraczają granice",
         model: "Odpowiedzialność za potrzeby",
         price: 200,
+        type: "standard"
       },
       {
         id: "konflikt",
@@ -88,13 +98,15 @@ export const courseCategories = [
         problem: "Eskalacja sporów",
         model: "Spirala konfliktu",
         price: 200,
+        type: "standard"
       },
       {
         id: "relacje",
         title: "Budowanie relacji",
         problem: "Trudność w utrzymaniu relacji",
         model: "Bezpieczeństwo psychologiczne",
-        price: 200,
+        price: 450,
+        type: "premium"
       }
     ]
   },
@@ -107,6 +119,7 @@ export const courseCategories = [
         problem: "Trudność w rozumieniu złożonych rzeczy",
         model: "Poziomy abstrakcji",
         price: 200,
+        type: "standard"
       },
       {
         id: "kontekst",
@@ -114,6 +127,7 @@ export const courseCategories = [
         problem: "Sprzeczne interpretacje rzeczywistości",
         model: "Znaczenie kontekstu",
         price: 200,
+        type: "standard"
       },
       {
         id: "narracja",
@@ -121,13 +135,15 @@ export const courseCategories = [
         problem: "Nadmierne analizowanie",
         model: "Umysł jako generator narracji",
         price: 200,
+        type: "standard"
       },
       {
         id: "kreatywnosc",
         title: "Kreatywność",
         problem: "Blokady twórcze",
         model: "Eksploracja vs eksploatacja",
-        price: 200,
+        price: 350,
+        type: "premium"
       }
     ]
   },
@@ -140,6 +156,7 @@ export const courseCategories = [
         problem: "Brak kierunku",
         model: "Wartości i wektor życia",
         price: 200,
+        type: "standard"
       },
       {
         id: "ego",
@@ -147,13 +164,15 @@ export const courseCategories = [
         problem: "Sztywne poczucie ja",
         model: "Tożsamość jako konstrukcja",
         price: 200,
+        type: "standard"
       },
       {
         id: "niedualnosc",
         title: "Niedualność",
         problem: "Poczucie oddzielenia",
         model: "Świadomość jako pole doświadczenia",
-        price: 200,
+        price: 500,
+        type: "premium"
       },
       {
         id: "sens",
@@ -161,6 +180,52 @@ export const courseCategories = [
         problem: "Pytanie o znaczenie",
         model: "Sens jako konstrukcja relacyjna",
         price: 200,
+        type: "standard"
+      }
+    ]
+  },
+  {
+    name: "Przedsiębiorczość",
+    courses: [
+      {
+        id: "budzetowanie",
+        title: "Budżetowanie osobiste",
+        problem: "Brak kontroli nad finansami.",
+        model: "Przepływy pieniężne (cashflow)",
+        price: 200,
+        type: "standard"
+      },
+      {
+        id: "zarzadzanie-piedzmi",
+        title: "Zarządzanie pieniędzmi",
+        problem: "Chaos i niepewność finansowa",
+        model: "3 koszyki: wydatki, oszczędności, inwestycje",
+        price: 200,
+        type: "standard"
+      },
+      {
+        id: "inwestowanie",
+        title: "Inwestowanie długoterminowe",
+        problem: "Ryzyko timing market i brak dyscypliny",
+        model: "Dollar Cost Averaging",
+        price: 200,
+        type: "standard"
+      },
+      {
+        id: "tasks-zespol",
+        title: "Zarządzanie zadaniami w zespole",
+        problem: "Rozproszona praca i brak priorytetów",
+        model: "Task flow: backlog, w trakcie, zakończone",
+        price: 200,
+        type: "standard"
+      },
+      {
+        id: "bussines-mapping",
+        title: "Mapowanie procesów biznesowych",
+        problem: "Wąskie gardła i trudność w skalowaniu",
+        model: "Process Mapping (BPMN)",
+        price: 450,
+        type: "premium"
       }
     ]
   }

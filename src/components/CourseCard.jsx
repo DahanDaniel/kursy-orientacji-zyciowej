@@ -1,9 +1,16 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Lock, Unlock } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 
 const CourseCard = ({ course }) => {
+  const isPremium = course.type === 'premium';
+  
   return (
-    <Link to={`/course/${course.id}`} className="course-card glass-panel">
+    <Link to={`/course/${course.id}`} className={`course-card glass-panel ${isPremium ? 'premium-card' : ''}`}>
+      {isPremium && (
+        <div className="premium-badge">
+          <Star size={14} className="star-icon" fill="currentColor" /> Premium
+        </div>
+      )}
       <div className="card-top">
         <h3 className="course-title">{course.title}</h3>
         <p className="course-desc">{course.problem}</p>
@@ -86,7 +93,8 @@ const CourseCard = ({ course }) => {
           width: 40px;
           height: 40px;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.05);
+          background: rgba(150, 150, 150, 0.1);
+          color: var(--text-primary);
           transition: all var(--transition-normal);
         }
 
@@ -94,6 +102,40 @@ const CourseCard = ({ course }) => {
           background: var(--accent-primary);
           color: white;
           transform: translateX(4px);
+        }
+
+        .premium-card {
+          border-color: rgba(234, 179, 8, 0.3);
+        }
+
+        .premium-card::before {
+          background: linear-gradient(90deg, #eab308, #d97706);
+        }
+
+        .premium-card:hover {
+          box-shadow: 0 12px 40px 0 rgba(234, 179, 8, 0.15);
+        }
+
+        .premium-card:hover .card-action {
+          background: linear-gradient(135deg, #eab308, #d97706);
+        }
+
+        .premium-badge {
+          position: absolute;
+          top: 16px;
+          right: 16px;
+          background: rgba(234, 179, 8, 0.15);
+          color: #eab308;
+          font-size: 0.75rem;
+          font-weight: 700;
+          padding: 4px 10px;
+          border-radius: 100px;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          border: 1px solid rgba(234, 179, 8, 0.3);
         }
       `}</style>
     </Link>

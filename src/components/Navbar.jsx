@@ -1,8 +1,19 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Compass } from 'lucide-react';
+import { Compass, Sun, Moon } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const location = useLocation();
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
 
   return (
     <header className="navbar glass-panel">
@@ -15,10 +26,13 @@ const Navbar = () => {
         </Link>
         <nav className="nav-links">
           <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Odkryj</Link>
-          <a href="#library">Biblioteka</a>
-          <a href="#bundles">Pakiety</a>
+          <a href="/#library">Biblioteka</a>
+          <a href="/#bundles">Pakiety</a>
         </nav>
         <div className="nav-actions">
+          <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
           <button className="btn-secondary">Zaloguj</button>
         </div>
       </div>
@@ -83,6 +97,28 @@ const Navbar = () => {
         .nav-links a:hover,
         .nav-links a.active {
           color: var(--text-primary);
+        }
+
+        .nav-actions {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+        }
+
+        .theme-toggle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--text-secondary);
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          transition: all var(--transition-normal);
+        }
+
+        .theme-toggle:hover {
+          color: var(--text-primary);
+          background: rgba(150, 150, 150, 0.1);
         }
 
         .btn-secondary {
