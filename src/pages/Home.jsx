@@ -20,9 +20,9 @@ const Home = () => {
             <span className="block text-gradient">własnego życia.</span>
           </h1>
           <p className="hero-subtitle">
-            Krótkie kursy tekstowe wyjaśniające działanie umysłu, decyzje i relacje.<br />
-            Zamiast motywacji precyzyjne modele.<br />
-            Zamiast rad protokoły wdrożenia.
+            Krótkie kursy tekstowe wyjaśniające najważniejsze zagadnienia w życiu.<br />
+            Zamiast motywacji - precyzyjne modele.<br />
+            Zamiast rad - protokoły wdrożenia.
           </p>
           <div className="hero-actions pt-4">
             <a href="#library" className="btn btn-primary btn-lg">
