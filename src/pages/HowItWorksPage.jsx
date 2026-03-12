@@ -14,9 +14,15 @@ const HowItWorksPage = () => {
       id: 2,
       icon: <Workflow />,
       element: "Zrozumienie mechanizmu działania",
-      purpose: "Zrozumienie mechanizmu. Nadaktywne DMN → nadmiar narracji → cierpienie psychiczne.",
+      purpose: "Wprowadzamy sprawdzone modele mentalne, dzięki którym można precyzyjnie nazwać i zaadresować problem.",
       exampleTitle: "Model Mentalny",
-      exampleText: "Mózg działa w różnych trybach. Jednym z nich jest Default Mode Network (DMN), który generuje narrację o sobie i świecie. To nie problem psychologiczny. To problem regulacji układu nerwowego."
+      exampleText: (
+        <>
+          Mózg działa w różnych trybach. Jednym z nich jest Default Mode Network (DMN), który generuje narrację o sobie i świecie. To nie problem psychologiczny. To problem regulacji układu nerwowego.
+          <br /><br />
+          Model: Nadaktywne DMN → nadmiar narracji → cierpienie psychiczne.
+        </>
+      )
     },
     {
       id: 3,
@@ -24,15 +30,21 @@ const HowItWorksPage = () => {
       element: "Reinterpretacja doświadczenia",
       purpose: "Zmiana perspektywy i zasada działania na podstawie nowej wiedzy.",
       exampleTitle: "Przesunięcie optyki",
-      exampleText: "Doświadczenie: pojawia się dużo myśli. Interpretacja: „coś jest ze mną nie tak”. Realny mechanizm: mózg działa w trybie DMN. Regulacja polega na przełączaniu mózgu z trybu narracji do trybu obecności i działania."
+      exampleText: (
+        <>
+          Doświadczenie: pojawia się dużo myśli.<br />
+          Realny mechanizm: Regulacja polega na przełączaniu mózgu z trybu narracji do trybu obecności i działania.<br />
+          Zmiana interpretacji z „coś jest ze mną nie tak” na „mózg działa w trybie DMN”.
+        </>
+      )
     },
     {
       id: 4,
       icon: <Target />,
       element: "Mechanizmy i Narzędzia",
       purpose: "Prezentacja i nauka konkretnych technik i narzędzi do radzenia sobie z problemem w codzienności.",
-      exampleTitle: "Puls narzędzi",
-      exampleText: "Konkretne praktyki regulujące układ autonomiczny i uspokajające umysł. Synchronizacja oddechu i uwagi zmienia aktywność sieci neuronalnych. Oddech (np. kriya), spacer, sport, medytacja, cisza, kontakt z naturą. Mechanizmy te bazują na rytmie, ruchu i uwadze sensorycznej."
+      exampleTitle: "Narzędzia",
+      exampleText: "Konkretne praktyki regulujące układ autonomiczny i uspokajające umysł. Synchronizacja oddechu i uwagi zmienia aktywność sieci neuronalnych. Oddech, spacer, sport, medytacja, cisza, kontakt z naturą. Mechanizmy te bazują na rytmie, ruchu i uwadze sensorycznej."
     },
     {
       id: 5,
