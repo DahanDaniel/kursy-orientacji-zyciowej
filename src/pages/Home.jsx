@@ -46,7 +46,7 @@ const Home = () => {
               <Brain size={32} color="var(--accent-primary)" />
             </div>
             <h3>Rozpoznaj problem</h3>
-            <p className="text-secondary">Zaczynamy od namacalnego problemu z życia — tam gdzie czujesz napięcie lub blokadę.</p>
+            <p className="text-secondary">Zaczynamy od namacalnego problemu z życia - tam gdzie czujesz napięcie lub blokadę.</p>
           </div>
           <div className="process-arrow"><ArrowRight className="text-muted" /></div>
           
@@ -65,7 +65,7 @@ const Home = () => {
               <span className="process-num">3</span>
               <Target size={32} color="#10b981" />
             </div>
-            <h3>Wdrożenie</h3>
+            <h3>Działaj</h3>
             <p className="text-secondary">Otrzymujesz konkretne narzędzia i protokół 14-dniowego eksperymentu w swoim życiu.</p>
           </div>
         </div>

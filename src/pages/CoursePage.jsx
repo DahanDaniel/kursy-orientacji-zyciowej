@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { specificCourseContent, allCoursesFlat } from '../data/courses';
-import { Lock, Settings, Shuffle, ArrowRight, Zap, Target, Star } from 'lucide-react';
+import { Lock, Settings, Shuffle, ArrowRight, Zap, Target, Star, Unlock } from 'lucide-react';
+import { useUser, SignInButton } from '@clerk/react';
 
 const CoursePage = () => {
   const { id } = useParams();
@@ -16,6 +17,12 @@ const CoursePage = () => {
   }
 
   const isDetailed = id === 'regulacja';
+  const { user, isSignedIn } = useUser();
+
+  // Check if the logged-in user has been granted access to this course
+  // Admin grants access by adding course IDs to user.publicMetadata.access in Clerk dashboard
+  const grantedAccess = isSignedIn && Array.isArray(user?.publicMetadata?.access) && user.publicMetadata.access.includes(id);
+  const hasAccess = grantedAccess; // In future: also check if user has paid
 
   return (
     <div className="course-page">
@@ -91,7 +98,8 @@ const CoursePage = () => {
         </div>
       </section>
 
-      {/* PAYWALL CTA */}
+      {/* PAYWALL CTA — only shown if user doesn't have access */}
+      {!hasAccess && (
       <div className="paywall-container container">
         <div className="paywall-card glass-panel text-center">
           <Lock size={40} className="mx-auto mb-6 text-accent-secondary" />
@@ -99,15 +107,35 @@ const CoursePage = () => {
           <p className="text-secondary mb-8 max-w-2xl mx-auto">
             Uzyskaj dostęp do narzędzi, protokołu wdrożenia i pełnej reinterpretacji, aby trwale rozwiązać ten problem.
           </p>
-          <button className="btn btn-primary btn-lg w-full max-w-sm">
-            Kup pełny kurs – {course.price} zł
-          </button>
+          {!isSignedIn ? (
+            <>
+              <SignInButton mode="modal">
+                <button className="btn btn-primary btn-lg w-full max-w-sm mb-4">Zaloguj się, aby uzyskać dostęp</button>
+              </SignInButton>
+              <p className="text-muted text-sm mt-2">Lub kup kurs bez zakładania konta:</p>
+              <button className="btn btn-secondary btn-lg w-full max-w-sm mt-2">Kup pełny kurs – {course.price} zł</button>
+            </>
+          ) : (
+            <button className="btn btn-primary btn-lg w-full max-w-sm">Kup pełny kurs – {course.price} zł</button>
+          )}
         </div>
       </div>
+      )}
 
-      {/* BLURRED PAID SECTION */}
-      <section className="paid-section-blurred container">
-        <div className="blur-overlay">
+      {/* ACCESS GRANTED BANNER */}
+      {hasAccess && (
+      <div className="paywall-container container">
+        <div className="paywall-card glass-panel text-center" style={{borderColor: 'var(--accent-primary)', borderWidth: '1px', borderStyle: 'solid'}}>
+          <Unlock size={40} className="mx-auto mb-4" style={{color: 'var(--accent-primary)'}} />
+          <h2 className="text-2xl font-bold mb-2">Masz dostęp do pełnego kursu</h2>
+          <p className="text-secondary">Pełna treść odblokowana.</p>
+        </div>
+      </div>
+      )}
+
+      {/* BLURRED PAID SECTION — only blurred if no access */}
+      <section className={`paid-section-blurred container ${hasAccess ? '' : ''}`}>
+        <div className={hasAccess ? '' : 'blur-overlay'}>
           <div className="glass-panel p-12 mb-8">
             <h2 className="text-2xl font-bold mb-8 flex items-center">
               <Shuffle className="mr-4" /> Reinterpretacja doświadczenia

@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Compass, Sun, Moon, ArrowLeft } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/react';
 
 const Navbar = () => {
   const location = useLocation();
@@ -44,7 +45,14 @@ const Navbar = () => {
           <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
-          <button className="btn-secondary">Zaloguj</button>
+          <SignedOut>
+            <SignInButton mode="modal">
+              <button className="btn-secondary">Zaloguj</button>
+            </SignInButton>
+          </SignedOut>
+          <SignedIn>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
         </div>
       </div>
       
