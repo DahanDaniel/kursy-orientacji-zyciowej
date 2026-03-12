@@ -266,9 +266,10 @@ const Home = () => {
         .hero-title {
           font-size: 4.5rem;
           font-weight: 800;
-          line-height: 1.1;
+          line-height: 1.25;
           letter-spacing: -0.03em;
           margin-bottom: 24px;
+          padding-bottom: 10px;
         }
 
         .hero-subtitle {
