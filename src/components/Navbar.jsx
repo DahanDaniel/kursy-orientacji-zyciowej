@@ -34,6 +34,7 @@ const Navbar = () => {
         <nav className="nav-links">
           <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Odkryj</Link>
           <a href="/#library">Biblioteka</a>
+          <Link to="/how-it-works" className={location.pathname === '/how-it-works' ? 'active' : ''}>Jak to działa?</Link>
           <a href="/#bundles">Pakiety</a>
         </nav>
         <div className="nav-actions">

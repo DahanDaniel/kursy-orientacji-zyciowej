@@ -1,6 +1,6 @@
 import { courseCategories, specificCourseContent } from '../data/courses';
 import CourseCard from '../components/CourseCard';
-import { Sparkles, Brain, ArrowRight, Zap, Target, Lock } from 'lucide-react';
+import { Sparkles, Brain, ArrowRight, Zap, Target, Lock, Unlock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -78,12 +78,12 @@ const Home = () => {
             <span className="badge-small mb-4">Przykładowy Kurs</span>
             <h2>{specificCourseContent.title}</h2>
             <p className="text-secondary mb-6">{specificCourseContent.freeSection.problem.experiences[0]}</p>
-            <Link to="/course/regulacja" className="btn btn-outline">
-              Zobacz strukturę kursu
+            <Link to="/how-it-works" className="btn btn-outline">
+              Jak to działa?
             </Link>
           </div>
           <div className="peek-visual">
-            <div className="mockup-window glass-panel">
+            <Link to="/how-it-works" className="mockup-window glass-panel mockup-link">
               <div className="mockup-header">
                 <span className="dot bg-red"></span><span className="dot bg-yellow"></span><span className="dot bg-green"></span>
               </div>
@@ -94,9 +94,10 @@ const Home = () => {
                 <div className="mockup-box mt-4"></div>
               </div>
               <div className="mockup-overlay flex-center">
-                <Lock size={32} className="text-muted" />
+                <Lock size={32} className="text-muted lock-icon" />
+                <Unlock size={32} className="text-accent-primary unlock-icon" />
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -401,6 +402,14 @@ const Home = () => {
           overflow: hidden;
           position: relative;
           height: 300px;
+          display: block;
+          transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+        }
+
+        .mockup-link:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 30px rgba(59, 130, 246, 0.15);
+          border-color: rgba(59, 130, 246, 0.3);
         }
 
         .mockup-header {
@@ -423,6 +432,7 @@ const Home = () => {
 
         .mockup-body {
           padding: 32px;
+          transition: filter var(--transition-normal), opacity var(--transition-normal);
         }
 
         .blur-sm {
@@ -430,11 +440,21 @@ const Home = () => {
           opacity: 0.5;
         }
 
+        .mockup-link:hover .blur-sm {
+          filter: blur(0);
+          opacity: 1;
+        }
+
         .mockup-line {
           height: 12px;
           background: rgba(255,255,255,0.1);
           border-radius: 6px;
           margin-bottom: 16px;
+          transition: background var(--transition-normal);
+        }
+
+        .mockup-link:hover .mockup-line {
+          background: rgba(255,255,255,0.2);
         }
 
         .mockup-box {
@@ -447,6 +467,31 @@ const Home = () => {
           position: absolute;
           inset: 0;
           background: rgba(20,20,22, 0.4);
+          transition: opacity var(--transition-normal);
+        }
+
+        .mockup-link:hover .mockup-overlay {
+          background: rgba(20,20,22, 0.1);
+        }
+
+        .lock-icon, .unlock-icon {
+          transition: opacity 0.3s ease, transform 0.3s ease;
+          position: absolute;
+        }
+
+        .unlock-icon {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+
+        .mockup-link:hover .lock-icon {
+          opacity: 0;
+          transform: scale(1.2);
+        }
+
+        .mockup-link:hover .unlock-icon {
+          opacity: 1;
+          transform: scale(1);
         }
 
         @media (max-width: 900px) {
