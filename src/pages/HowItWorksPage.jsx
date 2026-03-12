@@ -1,4 +1,5 @@
 import { ArrowRight, Lightbulb, Workflow, Target, PlayCircle, BookOpen } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const HowItWorksPage = () => {
   const steps = [
@@ -105,9 +106,9 @@ const HowItWorksPage = () => {
           <p className="text-secondary mb-8">
             Dostęp do pełnych modeli i narzędzi znajdziesz w Bibliotece Kursów.
           </p>
-          <a href="/#library" className="btn btn-primary btn-lg">
+          <Link to="/#library" className="btn btn-primary btn-lg">
             Przejdź do biblioteki <ArrowRight size={20} />
-          </a>
+          </Link>
         </div>
       </section>
 
