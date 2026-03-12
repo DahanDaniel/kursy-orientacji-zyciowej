@@ -167,20 +167,20 @@ export const courseCategories = [
         type: "standard"
       },
       {
-        id: "niedualnosc",
-        title: "Niedualność",
-        problem: "Poczucie oddzielenia",
-        model: "Świadomość jako pole doświadczenia",
-        price: 500,
-        type: "premium"
-      },
-      {
         id: "sens",
         title: "Sens życia",
         problem: "Pytanie o znaczenie",
         model: "Sens jako konstrukcja relacyjna",
         price: 200,
         type: "standard"
+      },
+      {
+        id: "niedualnosc",
+        title: "Niedualność",
+        problem: "Poczucie oddzielenia",
+        model: "Świadomość jako pole doświadczenia",
+        price: 500,
+        type: "premium"
       }
     ]
   },

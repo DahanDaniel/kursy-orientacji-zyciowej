@@ -23,10 +23,6 @@ const CoursePage = () => {
       
       {/* HEADER SECTION */}
       <header className="course-header container">
-        <Link to="/" className="back-link">
-          <ArrowRight size={16} style={{ transform: 'rotate(180deg)' }} />
-          <span>Wróć do biblioteki</span>
-        </Link>
         <div className="course-badges mb-6 flex items-center gap-4">
           <div className="badge-small">Moduł LifeOS</div>
           {course.type === 'premium' && (
@@ -146,20 +142,6 @@ const CoursePage = () => {
         .course-page {
           padding-top: 40px;
           padding-bottom: 80px;
-        }
-
-        .back-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          color: var(--text-secondary);
-          font-weight: 500;
-          margin-bottom: 32px;
-          transition: color var(--transition-normal);
-        }
-
-        .back-link:hover {
-          color: var(--text-primary);
         }
 
         .course-title-main {

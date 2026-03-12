@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Compass, Sun, Moon } from 'lucide-react';
+import { Compass, Sun, Moon, ArrowLeft } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const Navbar = () => {
@@ -18,12 +18,19 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <div className="container nav-container">
-        <Link to="/" className="brand">
-          <div className="brand-icon">
-            <Compass size={24} color="var(--accent-primary)" />
-          </div>
-          <span className="brand-text">LifeOS <span className="text-secondary">Courses</span></span>
-        </Link>
+        {location.pathname !== '/' ? (
+          <Link to="/" className="brand back-btn">
+            <ArrowLeft size={20} />
+            <span className="brand-text">Wróć do biblioteki</span>
+          </Link>
+        ) : (
+          <Link to="/" className="brand">
+            <div className="brand-icon">
+              <Compass size={24} color="var(--accent-primary)" />
+            </div>
+            <span className="brand-text">Kursy Orientacji Życiowej</span>
+          </Link>
+        )}
         <nav className="nav-links">
           <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Odkryj</Link>
           <a href="/#library">Biblioteka</a>
@@ -61,6 +68,12 @@ const Navbar = () => {
           display: flex;
           align-items: center;
           gap: 12px;
+          color: var(--text-primary);
+          transition: opacity var(--transition-normal);
+        }
+        
+        .brand.back-btn:hover {
+          opacity: 0.8;
         }
         
         .brand-icon {

@@ -20,7 +20,9 @@ const Home = () => {
             <span className="block text-gradient">własnego życia.</span>
           </h1>
           <p className="hero-subtitle">
-            Krótkie kursy tekstowe wyjaśniające działanie umysłu, decyzje i relacje. Zamiast motywacji — precyzyjne modele. Zamiast rad — protokoły wdrożenia.
+            Krótkie kursy tekstowe wyjaśniające działanie umysłu, decyzje i relacje.<br />
+            Zamiast motywacji precyzyjne modele.<br />
+            Zamiast rad protokoły wdrożenia.
           </p>
           <div className="hero-actions pt-4">
             <a href="#library" className="btn btn-primary btn-lg">
@@ -34,7 +36,7 @@ const Home = () => {
       <section id="how-it-works" className="how-it-works container">
         <div className="section-header text-center mb-12">
           <h2 className="section-title">Jak działają kursy LifeOS?</h2>
-          <p className="section-subtitle">Struktura oparta na modelowaniu i eksperymentach</p>
+          <p className="section-subtitle">Struktura oparta na modelowaniu i doświadczeniach</p>
         </div>
         
         <div className="process-grid">
@@ -507,6 +509,8 @@ const Home = () => {
           border-radius: 100px;
           letter-spacing: 0.05em;
           text-transform: uppercase;
+          text-align: center;
+          width: max-content;
         }
 
         .bundle-card h3 {

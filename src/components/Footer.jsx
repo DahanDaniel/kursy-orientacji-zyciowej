@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="container footer-content">
         <div className="footer-brand">
-          <span className="brand-text">LifeOS <span className="text-secondary">Courses</span></span>
+          <span className="brand-text">Kursy Orientacji Życiowej</span>
           <p className="footer-desc">Zrozum mechanizmy własnego doświadczenia. Uporządkuj życie.</p>
         </div>
         <div className="footer-links">
