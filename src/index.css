@@ -7,6 +7,9 @@
   --accent-secondary: #8b5cf6; /* Deep Purple */
   --accent-glow: rgba(59, 130, 246, 0.15);
   
+  --featured-bg-start: rgba(20,20,22,0.8);
+  --featured-bg-end: rgba(59, 130, 246, 0.05);
+  
   /* Typography */
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
@@ -32,6 +35,9 @@
   --accent-primary: #2563eb; 
   --accent-secondary: #7c3aed; 
   --accent-glow: rgba(37, 99, 235, 0.1);
+  
+  --featured-bg-start: rgba(250, 252, 255, 0.95);
+  --featured-bg-end: rgba(239, 246, 255, 0.3);
   
   --text-primary: #0f172a;
   --text-secondary: #475569;

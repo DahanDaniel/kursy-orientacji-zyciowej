@@ -538,7 +538,7 @@ const Home = () => {
         .bundle-card.featured {
           transform: scale(1.05);
           border-color: rgba(59, 130, 246, 0.4);
-          background: linear-gradient(180deg, rgba(20,20,22,0.8) 0%, rgba(59, 130, 246, 0.05) 100%);
+          background: linear-gradient(180deg, var(--featured-bg-start) 0%, var(--featured-bg-end) 100%);
           z-index: 10;
         }
 

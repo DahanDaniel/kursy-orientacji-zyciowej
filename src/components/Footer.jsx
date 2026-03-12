@@ -3,7 +3,10 @@ const Footer = () => {
     <footer className="footer">
       <div className="container footer-content">
         <div className="footer-brand">
-          <span className="brand-text">Kursy Orientacji Życiowej</span>
+          <span className="brand-text" style={{ display: 'flex', alignItems: 'center' }}>
+            Kursy Orientacji Życiowej
+            <span style={{ fontSize: '0.65rem', marginLeft: '12px', opacity: 0.6, fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase', border: '1px solid var(--glass-border)', padding: '4px 8px', borderRadius: '4px' }}>by Daniel Dahan</span>
+          </span>
           <p className="footer-desc">Zrozum mechanizmy własnego doświadczenia. Uporządkuj życie.</p>
         </div>
         <div className="footer-links">

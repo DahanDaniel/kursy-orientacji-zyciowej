@@ -13,9 +13,9 @@ const HowItWorksPage = () => {
     {
       id: 2,
       icon: <Workflow />,
-      element: "Model rzeczywistości i założenia",
+      element: "Zrozumienie mechanizmu działania",
       purpose: "Zrozumienie mechanizmu. Nadaktywne DMN → nadmiar narracji → cierpienie psychiczne.",
-      exampleTitle: "Model naukowy",
+      exampleTitle: "Model Mentalny",
       exampleText: "Mózg działa w różnych trybach. Jednym z nich jest Default Mode Network (DMN), który generuje narrację o sobie i świecie. To nie problem psychologiczny. To problem regulacji układu nerwowego."
     },
     {
@@ -30,17 +30,17 @@ const HowItWorksPage = () => {
       id: 4,
       icon: <Target />,
       element: "Mechanizmy i Narzędzia",
-      purpose: "Konkretne praktyki regulujące układ autonomiczny i uspokajające umysł. Synchronizacja oddechu i uwagi zmienia aktywność sieci neuronalnych.",
+      purpose: "Prezentacja i nauka konkretnych technik i narzędzi do radzenia sobie z problemem w codzienności.",
       exampleTitle: "Puls narzędzi",
-      exampleText: "Oddech (np. kriya), spacer, sport, medytacja, cisza, kontakt z naturą. Mechanizmy te bazują na rytmie, ruchu i uwadze sensorycznej."
+      exampleText: "Konkretne praktyki regulujące układ autonomiczny i uspokajające umysł. Synchronizacja oddechu i uwagi zmienia aktywność sieci neuronalnych. Oddech (np. kriya), spacer, sport, medytacja, cisza, kontakt z naturą. Mechanizmy te bazują na rytmie, ruchu i uwadze sensorycznej."
     },
     {
       id: 5,
       icon: <PlayCircle />,
       element: "Protokół wdrożenia",
-      purpose: "Dla kogo: Dla osób z nadmiarem myśli, napięciem lub stresem. Wymaga 20–30 minut dziennie.",
+      purpose: "Szczegółowe zalecenia i wyzwanie do podjęcia.",
       exampleTitle: "14-dniowy eksperyment",
-      exampleText: "Codzienna praktyka: 10–20 minut wybranego narzędzia oddechowego + ruch fizyczny (spacer, sport) + okna ciszy. Regulacja stabilizuje umysł i zwiększa zdolność do działania w systemie LifeOS."
+      exampleText: "Codzienna praktyka: 10–20 minut wybranego narzędzia oddechowego + ruch fizyczny (spacer, sport) + okna ciszy. Regulacja stabilizuje umysł i zwiększa zdolność do działania w nieprzewidywalnym Świecie."
     }
   ];
 
@@ -52,8 +52,8 @@ const HowItWorksPage = () => {
       <header className="hiw-header container text-center">
         <h1 className="hiw-title mb-6">Architektura <span className="text-accent-gradient">Rozumienia</span></h1>
         <p className="hiw-subtitle max-w-2xl mx-auto">
-          Każdy kurs na platformie LifeOS jest zbudowany według precyzyjnego Metamodelu. 
-          Przeprowadzamy Cię od bolesnego doświadczenia, przez naukowe zrozumienie mechanizmu, aż po praktyczny protokół działania. Zobacz, jak to wygląda w praktyce.
+          Każdy kurs na platformie jest zbudowany według precyzyjnego Metamodelu. 
+          Przeprowadzamy Cię od bolesnego doświadczenia, przez dogłębne zrozumienie mechanizmu, aż po praktyczny protokół działania. Zobacz, jak to wygląda w praktyce.
         </p>
       </header>
 
