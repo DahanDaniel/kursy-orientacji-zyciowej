@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { Compass, Sun, Moon, ArrowLeft } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/react';
+import { Show, SignInButton, UserButton } from '@clerk/react';
 
 const Navbar = () => {
   const location = useLocation();
@@ -40,19 +40,22 @@ const Navbar = () => {
           <a href="/#library">Biblioteka</a>
           <Link to="/how-it-works" className={location.pathname === '/how-it-works' ? 'active' : ''}>Jak to działa?</Link>
           <a href="/#bundles">Pakiety</a>
+          <Show when="signed-in">
+            <Link to="/my-courses" className={location.pathname === '/my-courses' ? 'active' : ''}>Moje kursy</Link>
+          </Show>
         </nav>
         <div className="nav-actions">
           <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
-          <SignedOut>
+          <Show when="signed-out">
             <SignInButton mode="modal">
               <button className="btn-secondary">Zaloguj</button>
             </SignInButton>
-          </SignedOut>
-          <SignedIn>
-            <UserButton afterSignOutUrl="/" />
-          </SignedIn>
+          </Show>
+          <Show when="signed-in">
+            <UserButton />
+          </Show>
         </div>
       </div>
       

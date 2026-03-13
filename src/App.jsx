@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Home from './pages/Home';
 import CoursePage from './pages/CoursePage';
 import HowItWorksPage from './pages/HowItWorksPage';
+import MyCourses from './pages/MyCourses';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -57,6 +58,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/how-it-works" element={<HowItWorksPage />} />
+            <Route path="/my-courses" element={<MyCourses />} />
             <Route path="/course/:id" element={<CoursePage />} />
           </Routes>
         </main>

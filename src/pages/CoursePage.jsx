@@ -178,9 +178,13 @@ const CoursePage = () => {
           line-height: 1.1;
           letter-spacing: -0.02em;
           margin-bottom: 60px;
-          background: linear-gradient(135deg, #fff, #a1a1aa);
+          background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+        }
+
+        [data-theme='light'] .course-title-main {
+          background: linear-gradient(135deg, var(--text-secondary), var(--text-primary));
         }
 
         /* Utils inside component */

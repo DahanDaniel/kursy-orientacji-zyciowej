@@ -185,6 +185,51 @@ export const courseCategories = [
     ]
   },
   {
+    name: "Dla studentów i licealistów",
+    courses: [
+      {
+        id: "czas-studenta",
+        title: "Zarządzanie czasem studenta",
+        problem: "Chaos między zajęciami, nauką i życiem prywatnym",
+        model: "Energia > czas",
+        price: 200,
+        type: "standard"
+      },
+      {
+        id: "kierunek-zycia",
+        title: "Wybór kierunku życia",
+        problem: "Nie wiem co studiować ani gdzie iść zawodowo",
+        model: "Eksperymentowanie zamiast jednej decyzji",
+        price: 200,
+        type: "standard"
+      },
+      {
+        id: "stres-egzaminacyjny",
+        title: "Radzenie sobie ze stresem egzaminacyjnym",
+        problem: "Duży stres przed egzaminami",
+        model: "Stres jako reakcja układu nerwowego",
+        price: 200,
+        type: "standard"
+      },
+      {
+        id: "myslenie-krytyczne",
+        title: "Myślenie krytyczne",
+        problem: "Trudność w odróżnianiu faktów, opinii i manipulacji",
+        model: "Błędy poznawcze",
+        price: 200,
+        type: "standard"
+      },
+      {
+        id: "skuteczna-nauka",
+        title: "Jak się skutecznie uczyć",
+        problem: "Wiele godzin nauki daje słabe efekty",
+        model: "Aktywne uczenie się",
+        price: 350,
+        type: "premium"
+      }
+    ]
+  },
+  {
     name: "Przedsiębiorczość",
     courses: [
       {
