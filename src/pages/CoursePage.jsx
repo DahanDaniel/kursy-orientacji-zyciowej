@@ -19,9 +19,11 @@ const CoursePage = () => {
   const isDetailed = id === 'regulacja';
   const { user, isSignedIn } = useUser();
 
-  // Check if the logged-in user has been granted access to this course
-  // Admin grants access by adding course IDs to user.publicMetadata.access in Clerk dashboard
-  const grantedAccess = isSignedIn && Array.isArray(user?.publicMetadata?.access) && user.publicMetadata.access.includes(id);
+  // Automatyczne odblokowanie "regulacja" dla każdego zalogowanego
+  const hasMetadataAccess = Array.isArray(user?.publicMetadata?.access) && user.publicMetadata.access.includes(id);
+  const isDefaultFreeCourse = id === 'regulacja';
+  
+  const grantedAccess = isSignedIn && (hasMetadataAccess || isDefaultFreeCourse);
   const hasAccess = grantedAccess; // In future: also check if user has paid
 
   return (

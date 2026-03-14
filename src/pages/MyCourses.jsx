@@ -26,7 +26,9 @@ const MyCourses = () => {
   }
 
   const access = user?.publicMetadata?.access || [];
-  const myCourses = allCoursesFlat.filter(course => access.includes(course.id));
+  // Automatycznie dodaje "regulacja" bo to darmowy kurs dla zalogowanych
+  const effectiveAccess = [...new Set([...access, 'regulacja'])];
+  const myCourses = allCoursesFlat.filter(course => effectiveAccess.includes(course.id));
 
   return (
     <div className="my-courses-page container mt-16 pb-32">

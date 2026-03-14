@@ -1,11 +1,17 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Compass, Sun, Moon, ArrowLeft } from 'lucide-react';
+import { Compass, Sun, Moon, ArrowLeft, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Show, SignInButton, UserButton } from '@clerk/react';
 
 const Navbar = () => {
   const location = useLocation();
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -31,11 +37,10 @@ const Navbar = () => {
             </div>
             <span className="brand-text" style={{ display: 'flex', alignItems: 'center' }}>
               Kursy Orientacji Życiowej
-              <span style={{ fontSize: '0.65rem', marginLeft: '12px', opacity: 0.6, fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase', border: '1px solid var(--glass-border)', padding: '4px 8px', borderRadius: '4px' }}>by Daniel Dahan</span>
             </span>
           </Link>
         )}
-        <nav className="nav-links">
+        <nav className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
           <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Odkryj</Link>
           <a href="/#library">Biblioteka</a>
           <Link to="/how-it-works" className={location.pathname === '/how-it-works' ? 'active' : ''}>Jak to działa?</Link>
@@ -56,6 +61,9 @@ const Navbar = () => {
           <Show when="signed-in">
             <UserButton />
           </Show>
+          <button className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle menu">
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
       
@@ -163,9 +171,49 @@ const Navbar = () => {
           background: rgba(255, 255, 255, 0.05);
         }
           
+        .btn-secondary:hover {
+          background: rgba(255, 255, 255, 0.05);
+        }
+
+        .mobile-menu-btn {
+          display: none;
+          color: var(--text-primary);
+          background: transparent;
+          border: none;
+          cursor: pointer;
+        }
+
         @media (max-width: 768px) {
           .nav-links {
             display: none;
+          }
+          
+          .nav-links.open {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: var(--bg-surface-elevated);
+            padding: 24px;
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            gap: 20px;
+          }
+          
+          .mobile-menu-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-sm);
+            transition: background var(--transition-normal);
+          }
+          
+          .mobile-menu-btn:hover {
+            background: rgba(150, 150, 150, 0.1);
           }
         }
       `}</style>
